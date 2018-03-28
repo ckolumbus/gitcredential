@@ -21,6 +21,11 @@ import (
 	"os"
 )
 
+var (
+	version        = "0.1.0"
+	version_commit = "undefined"
+)
+
 ////////////////////////////////////////////////////////////////
 /// adapted from https://github.com/jprichardson/readline-go
 /// MIT License : Copyright (c) 2013 JP Richardson
@@ -74,7 +79,8 @@ func printHelp(out io.Writer) {
 	fmt.Fprint(out, "\n")
 	fmt.Fprint(out, "Example : gitcred >> credentials.git\n")
 	fmt.Fprint(out, "\n")
-	fmt.Fprint(out, "Source : https://github.com/ckolumbus/gitcred\n")
+	fmt.Fprintf(out, "Version : %s, Commit : %s\n", version, version_commit)
+	fmt.Fprint(out, "Source  : https://github.com/ckolumbus/gitcred\n")
 	fmt.Fprint(out, "Copyright (c) 2018 Chris Drexler <ckolumbus@ac-drexler.de>\n")
 	fmt.Fprint(out, "This software is released under the MIT License. (https://opensource.org/licenses/MIT)\n")
 	fmt.Fprint(out, "\n")
